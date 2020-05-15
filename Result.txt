@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class Result{
+public static void main(String[] args){
+Scanner r = new Scanner(System.in);
+float score;
+char Grade;
+System.out ,println("Eneter your score ");
+score = r.nextInt();
+	if(score >= 75){
+	   Grade="A";
+	
+System.out.println("congrate you have made" + Grade);
+	      }	
+	if(score >= 70 && <=74){
+	   Grade="AB"
+System.out.println("congrate you have made" + Grade);
+	}
+
+
+if(score >= 65 && <=69){
+	   Grade="B"
+System.out.println("congrate you have made" + Grade);
+	}
+
+if(score >= 60 && <=64){
+	   Grade="BC"
+System.out.println("congrate you have made" + Grade);
+	}
+if(score >= 55 && <=59){
+	   Grade="C"
+System.out.println("congrate you have made" + Grade);
+	}
+if(score >= 50 && <=54){
+	   Grade="CD"
+System.out.println("congrate you have made" + Grade);
+	}
+if(score >= 45 && <=49){
+	   Grade="D"
+System.out.println("congrate you have made" + Grade);
+	}
+if(score >= 40 && <=44){
+	   Grade="E"
+System.out.println("congrate you have made" + Grade);
+	}
+if(score >= 0 && <=39){
+	   Grade="AB"
+System.out.println("congrate you have made" + Grade);
+	}
+
+if(score < 0){
+	   
+System.out.println("INVALID GRADE");
+	}
+
+}
+}

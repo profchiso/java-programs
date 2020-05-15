@@ -1,0 +1,62 @@
+Dim dblGradePoint As Double
+Dim dblCreditUnit As Double
+Dim strGrade, strName As String
+Dim dblNoofCourses, dblFinalGPA As Double
+Dim dblTotalCreditUnit, GPA As Double
+Dim TotalGPA As Double
+Const dblGradepointA As Double = 4
+Const dblGradepointAB As Double = 3.5
+Const dblGradepointB As Double = 3.25
+Const dblGradepointBC As Double = 3
+Const dblGradepointC As Double = 2.75
+Const dblGradepointCD As Double = 2.5
+Const dblGradepointD As Double = 2.25
+Const dblGradepointE As Double = 2
+Const dblGradepointF As Double = 0
+dblNoofCourses = Val(cboNo)
+If IsNumeric(cboNo) Then
+strName = (TxtName.Text)
+For i = 1 To dblNoofCourses
+strGrade = InputBox("Enter the grade for Course" & " " & i)
+dblCreditUnit = InputBox("Enter credit unit for Course" & " " & i)
+Select Case strGrade
+    Case Is = "A"
+GPA = dblGradepointA * dblCreditUnit
+Case Is = "AB"
+GPA = dblGradepointAB * dblCreditUnit
+Case Is = "B"
+GPA = dblGradepointB * dblCreditUnit
+Case Is = "BC"
+GPA = dblGradepointBC * dblCreditUnit
+Case Is = "C"
+GPA = dblGradepointC * dblCreditUnit
+Case Is = "CD"
+GPA = dblGradepointCD * dblCreditUnit
+Case Is = "D"
+GPA = dblGradepointD * dblCreditUnit
+Case Is = "E"
+GPA = dblGradepointE * dblCreditUnit
+Case Is = "F"
+GPA = dblGradepointF * dblCreditUnit
+Case Else
+lblDisplay.Caption = "Not considered"
+End Select
+TotalGPA = TotalGPA + GPA
+lblTotalGPA.Caption = Str(TotalGPA)
+dblTotalCreditUnit = dblTotalCreditUnit + dblCreditUnit
+lblTotalCreditUnit.Caption = Str(dblTotalCreditUnit)
+
+Next i
+dblFinalGPA = TotalGPA / dblTotalCreditUnit
+lblDisplay.Caption = Str(dblFinalGPA)
+
+Select Case dblFinalGPA
+
+Case Is >= 3.5: lblRemark.Caption = "congrats!You have made a Distinction"
+Case Is > 3: lblRemark.Caption = "congrats!You have made a UpperCredit"
+Case Is > 2.5: lblRemark.Caption = "You have made a LowerCredit"
+Case Is > 1.75: lblRemark.Caption = "Repeat ND1"
+Case Is > 1.5: lblRemark.Caption = "You would be withdrawn if you repeat this performance"
+Case Else: lblRemark.Caption = "Case Not valid"
+End Select
+End If
